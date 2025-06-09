@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Welcome Home!</h1>
+    <p>You have successfully registered.</p>
+    <p id="user-info"></p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get('username');
+      const email = params.get('email');
+      if (username && email) {
+        document.getElementById('user-info').textContent = `Username: ${username}, Email: ${email}`;
+      }
+    </script>
+  </body>
+</html>

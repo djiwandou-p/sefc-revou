@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Validation Example</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Register</h1>
+  <form id="registerForm" action="/register" method="POST">
+    <label>Username: <input type="text" name="username" id="username"></label><br>
+    <label>Email: <input type="email" name="email" id="email"></label><br>
+    <label>Password: <input type="password" name="password" id="password"></label><br>
+    <button type="submit">Submit</button>
+  </form>
+  <div id="error"></div>
+  <script src="/script.js"></script>
+</body>
+</html>
