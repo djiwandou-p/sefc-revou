@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+  padding: 16px 24px;
+}
+
+.header-wrapper > .menu {
+  display: flex;
+}
+
+.header-wrapper > .menu > button {
+  background-color: white;
+  padding: 8px 16px;
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: 0.3s background-color ease-out;
+}
+
+.header-wrapper > .menu > button:hover {
+  background-color: gainsboro;
+}
+
+.header-wrapper > .menu > button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.header-wrapper > .menu > button:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+.header-wrapper > .logo {
+  width: auto;
+  height: 40px;
+}
+
+.main-content {
+  padding: 24px;
+}
+
+.main-content .form-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: start;
+}
+
+.main-content .form-section form,
+.main-content .form-section div {
+  width: 100%;
+}
+
+.img-slideshow {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .header-wrapper {
+    flex-direction: column;
+  }
+
+  .menu {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 14px;
+  }
+} 

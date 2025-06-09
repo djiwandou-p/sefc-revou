@@ -5,83 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RevoU SEFC 2025</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      }
-
-      .header-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 2px solid black;
-        padding: 16px 24px;
-      }
-
-      .header-wrapper > .menu {
-        display: flex;
-      }
-
-      .header-wrapper > .menu > button {
-        background-color: white;
-        padding: 8px 16px;
-        border: 1px solid gray;
-        cursor: pointer;
-        transition: 0.3s background-color ease-out;
-      }
-
-      .header-wrapper > .menu > button:hover {
-        background-color: gainsboro;
-      }
-
-      .header-wrapper > .menu > button:first-child {
-        border-radius: 4px 0 0 4px;
-      }
-
-      .header-wrapper > .menu > button:last-child {
-        border-radius: 0 4px 4px 0;
-      }
-
-      .header-wrapper > .logo {
-        width: auto;
-        height: 40px;
-      }
-
-      .main-content {
-        padding: 24px;
-      }
-
-      .main-content .form-section {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: start;
-      }
-
-      .main-content .form-section form,
-      .main-content .form-section div {
-        width: 100%;
-      }
-
-      .img-slideshow {
-        width: 100%;
-      }
-
-      @media only screen and (max-width: 600px) {
-        .header-wrapper {
-          flex-direction: column;
-        }
-
-        .menu {
-          width: 100%;
-          flex-direction: column;
-        }
-
-        .logo {
-          margin-bottom: 14px;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header class="header-wrapper">
@@ -96,55 +20,24 @@
 
     <main class="main-content">
       <h1>Hi <span id="nama">Dji</span>, Welcome To Website</h1>
-
-      <script>
-        var name = prompt("Masukan nama kamu");
-        document.getElementById("nama").innerText = name;
-      </script>
-
-      <!-- <div>
-        <img
-          class="img-slideshow"
-          src="https://picsum.photos/1080/400?random=1"
-        />
-        <img
-          class="img-slideshow"
-          src="https://picsum.photos/1080/400?random=2"
-        />
-        <img
-          class="img-slideshow"
-          src="https://picsum.photos/1080/400?random=3"
-        />
-        <button onclick="plusDivs(-1)">Previous</button>
-        <button onclick="plusDivs(1)">Next</button>
-      </div>
-
-      <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-          showDivs((slideIndex += n));
-        }
-
-        function showDivs(n) {
-          var i;
-          var imgList = document.getElementsByClassName("img-slideshow");
-          if (n > imgList.length) slideIndex = 1;
-          else if (n < 1) slideIndex = imgList.length;
-
-          for (i = 0; i < imgList.length; i++) {
-            imgList[i].style.display = "none";
-          }
-
-          imgList[slideIndex - 1].style.display = "block";
-        }
-
-        setInterval(() => {
-          plusDivs(1);
-        }, 1000);
-      </script> -->
-
+      <!-- <div class="slideshow-section">
+        <div>
+          <img
+            class="img-slideshow"
+            src="https://picsum.photos/1080/400?random=1"
+          />
+          <img
+            class="img-slideshow"
+            src="https://picsum.photos/1080/400?random=2"
+          />
+          <img
+            class="img-slideshow"
+            src="https://picsum.photos/1080/400?random=3"
+          />
+          <button id="prevBtn">Previous</button>
+          <button id="nextBtn">Next</button>
+        </div>
+      </div> -->
       <div class="form-section">
         <form name="message-form" onsubmit="return validateForm()">
           Nama: <input placeholder="Nama" type="text" name="full-name" />
@@ -167,26 +60,6 @@
 
           <input type="submit" value="Submit" />
         </form>
-        <script>
-          function validateForm() {
-            var name = document.forms["message-form"]["full-name"].value;
-            var date = document.forms["message-form"]["birth-date"].value;
-            var gender = document.forms["message-form"]["gender"].value;
-            var messages = document.forms["message-form"]["messages"].value;
-
-            if (name == "" || date == "" || gender == "" || messages == "") {
-              alert("Input tidak boleh kosong");
-              return false;
-            }
-
-            document.getElementById("sender-full-name").innerText = name;
-            document.getElementById("sender-birth-date").innerText = date;
-            document.getElementById("sender-gender").innerText = gender;
-            document.getElementById("sender-messages").innerText = messages;
-            return false;
-          }
-        </script>
-
         <div class="form-output">
           <p>Nama: <span id="sender-full-name"></span></p>
           <p>Tanggal Lahir: <span id="sender-birth-date"></span></p>
@@ -194,6 +67,7 @@
           <p>Pesan: <span id="sender-messages"></span></p>
         </div>
       </div>
+      <script src="js/app.js"></script>
     </main>
   </body>
 </html>
