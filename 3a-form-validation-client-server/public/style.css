@@ -6,4 +6,24 @@ body {
     color: red;
     margin-top: 1rem;
   }
+  #password-strength {
+    margin-bottom: 1rem;
+    font-weight: bold;
+    height: 1.5em;
+  }
+  .password-very-weak {
+    color: #d32f2f;
+  }
+  .password-weak {
+    color: #f57c00;
+  }
+  .password-fair {
+    color: #fbc02d;
+  }
+  .password-good {
+    color: #388e3c;
+  }
+  .password-strong {
+    color: #1976d2;
+  }
   
