@@ -1,5 +1,5 @@
 # sefc-revou
-repository for software engineering fundamental course revou 2025
+repository for software engineering fundamental course revou
 
 ## Day 1: 
 * /0-js-css-html: example to show the difference between html, css, js and some JS key features (on slide)
