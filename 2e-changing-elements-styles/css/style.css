@@ -1,0 +1,9 @@
+#colorBox {
+    width: 100px;
+    height: 100px;
+    background: #eee;
+    line-height: 100px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
