@@ -1,5 +1,6 @@
 ## Git Workflow Simulation
 In order to simulate git workflow and collaboration
+* Fork -> Clone
 * Create feature branch
 * Commit
 * Open PR (Pull Request)
