@@ -1,5 +1,5 @@
-# sefc-revou
-repository for software engineering fundamental course revou
+# SEFC-RevoU
+repository for software engineering fundamental course RevoU
 
 ## Day 1: 
 * /0-js-css-html: example to show the difference between html, css, js and some JS key features (on slide)
@@ -24,6 +24,7 @@ repository for software engineering fundamental course revou
 * /6-fixed-layout/: example of fixed-width layout
 * /7-fluid-layout-relative-units/: example of fluid layout using relative units
 * /8-fluid-layout-media-queries/: example of combination between fluid layout and media queries
+* /9-git-workflow-simulation/: example of git workflow simulation, branching, commit, pull request, merge (reference: [learn git branching](https://learngitbranching.js.org/)), see detail here: [Git-Workflow](Git-Workflow.md)
 
 ## Others (see PR): 
 * PR about utilizing AI to add advanced password strength client side
