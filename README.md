@@ -23,6 +23,7 @@ repository for software engineering fundamental course revou
 * /5d-media-queries-combination/: example of combined media queries for all breakpoints
 * /6-fixed-layout/: example of fixed-width layout
 * /7-fluid-layout-relative-units/: example of fluid layout using relative units
+* /8-fluid-layout-media-queries/: example of combination between fluid layout and media queries
 
 ## Others (see PR): 
 * PR about utilizing AI to add advanced password strength client side

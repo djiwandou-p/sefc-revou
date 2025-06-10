@@ -1,0 +1,90 @@
+/* Fluid container and typography */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 5vw;
+    background: #f5f5f5;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+  }
+  
+  nav a.active,
+  nav a:hover {
+    background: #2196f3;
+    color: #fff;
+  }
+  
+  main {
+    max-width: 80vw;
+    margin: 2em auto;
+  }
+  
+  /* Mobile: Stack nav vertically, fluid width */
+  @media (max-width: 600px) {
+    header {
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1rem 2vw;
+    }
+    nav ul {
+      flex-direction: column;
+      gap: 0;
+    }
+    nav a {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+    main {
+      max-width: 95vw;
+    }
+  }
+  
+  /* Tablet: Slightly wider, horizontal nav */
+  @media (min-width: 601px) and (max-width: 900px) {
+    header {
+      padding: 1rem 3vw;
+    }
+    main {
+      max-width: 90vw;
+    }
+  }
+  
+  /* Desktop: Wide, horizontal nav, fluid container */
+  @media (min-width: 901px) {
+    header {
+      padding: 1rem 10vw;
+    }
+    main {
+      max-width: 60vw;
+    }
+  }
+  
