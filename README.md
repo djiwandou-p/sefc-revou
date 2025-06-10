@@ -16,6 +16,13 @@ repository for software engineering fundamental course revou
 ## Day 2: 
 * /3-manipulating-dom-js: example of advanced DOM manipulating techniques: automatic slideshow banner
 * /3-manipulating-dom-js: some media-queries example (needs to be enhanced)
+* /4-use-viewport-meta-tag/:	example of viewport meta tag for responsive scaling
+* /5-media-queries-mobile/:	example of media query for mobile screens
+* /5b-media-queries-tablet/: example of media query for tablet screens
+* /5c-media-queries-desktop/: example of media query for desktop screens
+* /5d-media-queries-combination/: example of combined media queries for all breakpoints
+* /6-fixed-layout/: example of fixed-width layout
+* /7-fluid-layout-relative-units/: example of fluid layout using relative units
 
 ## Others (see PR): 
 * PR about utilizing AI to add advanced password strength client side
