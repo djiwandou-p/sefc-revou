@@ -1,0 +1,30 @@
+header {
+    background: #f0f0f0;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  /* Mobile */
+  @media (max-width: 600px) {
+    header {
+      background: #2196f3;
+      color: #fff;
+    }
+  }
+  
+  /* Tablet */
+  @media (min-width: 601px) and (max-width: 900px) {
+    header {
+      background: #4caf50;
+      color: #fff;
+    }
+  }
+  
+  /* Desktop */
+  @media (min-width: 901px) {
+    header {
+      background: #333;
+      color: #fff;
+    }
+  }
+  
