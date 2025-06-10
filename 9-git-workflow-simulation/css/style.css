@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
+  }
+  header {
+    background: #f5f5f5;
+    padding: 1em;
+  }
+  button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+  }
+  
