@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units: Interactive Examples</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .unit-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+        
+        .explanation {
+            background: #ecf0f1;
+            padding: 1.5rem;
+            border-left: 4px solid #3498db;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .example-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .demo-box {
+            border: 2px solid #3498db;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #e8f4fd;
+            border-radius: 4px;
+        }
+        
+        /* Percentage Examples */
+        .parent-container {
+            width: 400px;
+            height: 200px;
+            background: #34495e;
+            padding: 10px;
+            color: white;
+            margin: 1rem 0;
+        }
+        
+        .child-50 {
+            width: 50%;
+            height: 40%;
+            background: #e74c3c;
+            color: white;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .child-100 {
+            width: 100%;
+            height: 30%;
+            background: #27ae60;
+            color: white;
+            padding: 0.5rem;
+        }
+        
+        /* Viewport Units Examples */
+        .vw-demo {
+            width: 50vw;
+            height: 20vh;
+            background: linear-gradient(45deg, #9b59b6, #8e44ad);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .vw-text {
+            font-size: 4vw;
+            text-align: center;
+        }
+        
+        /* REM Examples */
+        html {
+            font-size: 16px; /* This is the root font-size */
+        }
+        
+        .rem-container {
+            margin: 1.5rem 0; /* 24px */
+            padding: 2rem; /* 32px */
+            background: #f39c12;
+            color: white;
+            border-radius: 0.5rem; /* 8px */
+        }
+        
+        .rem-text {
+            font-size: 1.5rem; /* 24px */
+            margin-bottom: 1rem; /* 16px */
+        }
+        
+        /* EM Examples */
+        .em-container {
+            font-size: 18px; /* Parent font size */
+            background: #16a085;
+            color: white;
+            padding: 1em; /* 18px */
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        
+        .em-child {
+            font-size: 1.2em; /* 21.6px (18px * 1.2) */
+            padding: 0.5em; /* 10.8px (21.6px * 0.5) */
+            background: rgba(255,255,255,0.2);
+            margin: 0.5em 0; /* 10.8px */
+            border-radius: 4px;
+        }
+        
+        .em-nested {
+            font-size: 1.2em; /* 25.92px (21.6px * 1.2) - COMPOUNDING! */
+            padding: 0.5em; /* 12.96px */
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .highlight {
+            background: #fffacd !important;
+            font-weight: bold;
+        }
+        
+        .warning {
+            background: #ffe6e6;
+            border: 1px solid #ff9999;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        .best-practice {
+            background: #e6ffe6;
+            border: 1px solid #99cc99;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .example-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .parent-container {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .vw-text {
+                font-size: 6vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: #2c3e50; margin-bottom: 2rem; font-size: 2.5rem;">
+            CSS Units: Complete Guide with Interactive Examples
+        </h1>
+        
+        <!-- PERCENTAGE UNITS -->
+        <section class="section">
+            <h2 class="unit-title">1. Percentage (%) - Parent-Relative Sizing</h2>
+            
+            <div class="explanation">
+                <strong>How it works:</strong> Percentage values are calculated relative to the parent element's dimensions.
+                <br><br>
+                <strong>Formula:</strong> Child size = (Percentage / 100) × Parent size
+            </div>
+            
+            <div class="example-container">
+                <div>
+                    <div class="code-block">
+.parent {
+  width: 400px;
+  height: 200px;
+}
+
+.child-50 {
+  width: 50%;   /* 200px */
+  height: 40%;  /* 80px */
+}
+
+.child-100 {
+  width: 100%;  /* 400px */
+  height: 30%;  /* 60px */
+}
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="parent-container">
+                        <div style="font-size: 0.9rem; margin-bottom: 0.5rem;">Parent: 400px × 200px</div>
+                        <div class="child-50">50% × 40% = 200px × 80px</div>
+                        <div class="child-100">100% × 30% = 400px × 60px</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="best-practice">
+                <strong>✅ Best for:</strong> Layout containers, responsive grids, flexible components that should scale with their parent
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Watch out:</strong> If parent has no explicit width/height, percentage might not work as expected
+            </div>
+        </section>
+        
+        <!-- VIEWPORT UNITS -->
+        <section class="section">
+            <h2 class="unit-title">2. Viewport Units (vw/vh) - Screen-Relative Sizing</h2>
+            
+            <div class="explanation">
+                <strong>How it works:</strong> Based on the viewport (browser window) dimensions.
+                <br>
+                <strong>1vw</strong> = 1% of viewport width | <strong>1vh</strong> = 1% of viewport height
+                <br><br>
+                <strong>Example:</strong> On a 1200px wide screen, 50vw = 600px
+            </div>
+            
+            <div class="example-container">
+                <div>
+                    <div class="code-block">
+.hero-text {
+  font-size: 4vw;
+  /* Scales with screen width */
+}
+
+.full-height {
+  height: 100vh;
+  /* Always full screen height */
+}
+
+.half-width {
+  width: 50vw;
+  /* Always half screen width */
+}
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="vw-demo">
+                        <div class="vw-text">4vw Text</div>
+                    </div>
+                    <p style="text-align: center; color: #666; font-size: 0.9rem;">
+                        This box is 50vw wide, 20vh tall. Resize your browser to see it change!
+                    </p>
+                </div>
+            </div>
+            
+            <div class="best-practice">
+                <strong>✅ Best for:</strong> Hero sections, full-screen layouts, responsive typography, landing page elements
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Watch out:</strong> Can cause text to become too small on mobile or too large on wide screens. Always set min/max limits.
+            </div>
+        </section>
+        
+        <!-- REM UNITS -->
+        <section class="section">
+            <h2 class="unit-title">3. REM - Root Font-Size Relative</h2>
+            
+            <div class="explanation">
+                <strong>How it works:</strong> Always relative to the root element's (html) font-size.
+                <br>
+                <strong>Default:</strong> 1rem = 16px (browser default)
+                <br>
+                <strong>Consistent:</strong> 1rem is always the same size throughout your entire website
+            </div>
+            
+            <div class="example-container">
+                <div>
+                    <div class="code-block">
+html {
+  font-size: 16px; /* Root size */
+}
+
+.container {
+  margin: 1.5rem;    /* 24px */
+  padding: 2rem;     /* 32px */
+  font-size: 1.5rem; /* 24px */
+}
+
+/* Always consistent across site */
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="rem-container">
+                        <div class="rem-text">1.5rem Text (24px)</div>
+                        <p>This container has 2rem padding (32px) and 1.5rem margin (24px)</p>
+                        <p>REM values are always consistent - they don't compound!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="best-practice">
+                <strong>✅ Best for:</strong> Consistent spacing, typography scales, margins/padding, component sizing
+            </div>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Root Font Size</th>
+                    <th>1rem =</th>
+                    <th>1.5rem =</th>
+                    <th>2rem =</th>
+                </tr>
+                <tr>
+                    <td>16px (default)</td>
+                    <td>16px</td>
+                    <td>24px</td>
+                    <td>32px</td>
+                </tr>
+                <tr>
+                    <td>18px</td>
+                    <td>18px</td>
+                    <td>27px</td>
+                    <td>36px</td>
+                </tr>
+                <tr>
+                    <td>14px</td>
+                    <td>14px</td>
+                    <td>21px</td>
+                    <td>28px</td>
+                </tr>
+            </table>
+        </section>
+        
+        <!-- EM UNITS -->
+        <section class="section">
+            <h2 class="unit-title">4. EM - Parent Font-Size Relative</h2>
+            
+            <div class="explanation">
+                <strong>How it works:</strong> Relative to the parent element's font-size.
+                <br>
+                <strong>Compounding:</strong> If nested, em values multiply (can be tricky!)
+                <br>
+                <strong>Context-aware:</strong> Same em value can result in different pixel sizes
+            </div>
+            
+            <div class="example-container">
+                <div>
+                    <div class="code-block">
+.parent {
+  font-size: 18px;
+}
+
+.child {
+  font-size: 1.2em; /* 21.6px */
+  padding: 0.5em;   /* 10.8px */
+}
+
+.nested {
+  font-size: 1.2em; /* 25.92px! */
+  /* Compounding: 21.6px * 1.2 */
+}
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="em-container">
+                        <div>Parent: 18px font-size</div>
+                        <div class="em-child">
+                            Child: 1.2em = 21.6px
+                            <div class="em-nested">
+                                Nested: 1.2em = 25.92px (compounded!)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="best-practice">
+                <strong>✅ Best for:</strong> Component-specific spacing, scalable components, contextual sizing
+            </div>
+            
+            <div class="warning">
+                <strong>⚠️ Watch out:</strong> Compounding effect in nested elements can cause unexpected sizing
+            </div>
+        </section>
+        
+        <!-- COMPARISON AND BEST PRACTICES -->
+        <section class="section">
+            <h2 class="unit-title">When to Use Each Unit</h2>
+            
+            <table class="comparison-table">
+                <tr>
+                    <th>Unit</th>
+                    <th>Best Use Cases</th>
+                    <th>Avoid When</th>
+                    <th>Example Scenario</th>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>%</strong></td>
+                    <td>Layout containers, responsive grids, flexible widths</td>
+                    <td>Fixed-size elements, borders, small spacing</td>
+                    <td>Sidebar: width: 25%; Main: width: 75%</td>
+                </tr>
+                <tr>
+                    <td><strong>vw/vh</strong></td>
+                    <td>Hero sections, full-screen layouts, responsive typography</td>
+                    <td>Small text, precise measurements</td>
+                    <td>Hero title: font-size: 5vw</td>
+                </tr>
+                <tr class="highlight">
+                    <td><strong>rem</strong></td>
+                    <td>Consistent spacing, typography, component sizes</td>
+                    <td>Parent-dependent sizing</td>
+                    <td>Button padding: 1rem 2rem</td>
+                </tr>
+                <tr>
+                    <td><strong>em</strong></td>
+                    <td>Contextual spacing, scalable components</td>
+                    <td>Global consistency needed</td>
+                    <td>Icon size relative to text: width: 1.2em</td>
+                </tr>
+            </table>
+            
+            <div class="best-practice">
+                <h3>🎯 Pro Tips for Responsive Design:</h3>
+                <ul style="margin-left: 1.5rem; margin-top: 1rem;">
+                    <li><strong>Layout:</strong> Use % for flexible containers, CSS Grid for complex layouts</li>
+                    <li><strong>Typography:</strong> Use rem for consistent sizes, em for contextual scaling</li>
+                    <li><strong>Spacing:</strong> rem for consistent spacing system, em for component-specific</li>
+                    <li><strong>Responsive Elements:</strong> vw/vh for full-screen components, % for flexible sizing</li>
+                    <li><strong>Media Queries:</strong> Use em-based breakpoints for better accessibility</li>
+                </ul>
+            </div>
+            
+            <div class="demo-box">
+                <h3>Real-World Example: Responsive Card Component</h3>
+                <div class="code-block">
+.card {
+  width: 100%;           /* % - Flexible width */
+  max-width: 20rem;      /* rem - Consistent max size */
+  margin: 1rem;          /* rem - Consistent spacing */
+  padding: 1.5rem;       /* rem - Consistent internal spacing */
+}
+
+.card-title {
+  font-size: 1.5rem;     /* rem - Consistent typography */
+  margin-bottom: 1rem;   /* rem - Consistent spacing */
+}
+
+.card-icon {
+  width: 1.2em;          /* em - Scales with text */
+  height: 1.2em;         /* em - Scales with text */
+}
+
+@media (max-width: 48em) { /* em-based breakpoint */
+  .card {
+    width: 90vw;         /* vw - Responsive to viewport */
+    margin: 0.5rem auto; /* rem - Smaller consistent margin */
+  }
+}
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2 class="unit-title">Interactive Test</h2>
+            <p>Try resizing your browser window to see how different units respond:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 2rem 0;">
+                <div style="background: #e74c3c; color: white; padding: 1rem; text-align: center;">
+                    <strong>50% Width</strong><br>
+                    <small>Relative to parent</small>
+                </div>
+                <div style="background: #3498db; color: white; padding: 1rem; text-align: center; width: 30vw;">
+                    <strong>30vw Width</strong><br>
+                    <small>Relative to viewport</small>
+                </div>
+                <div style="background: #27ae60; color: white; padding: 1rem; text-align: center; width: 15rem;">
+                    <strong>15rem Width</strong><br>
+                    <small>Always 240px (at 16px root)</small>
+                </div>
+                <div style="background: #f39c12; color: white; padding: 1rem; text-align: center; width: 12em; font-size: 18px;">
+                    <strong>12em Width</strong><br>
+                    <small>216px (18px × 12)</small>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
