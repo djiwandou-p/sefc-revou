@@ -12,3 +12,10 @@ body {
     font-size: 1em;
   }
   
+  body.dark-mode {
+    background: #222;
+    color: #fff;
+  }
+  header.dark-mode {
+    background: #333;
+  }
